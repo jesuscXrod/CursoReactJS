@@ -1,0 +1,128 @@
+[
+        {
+            "category": "Accion",
+            "titulo": "Doom Eternal",
+            "descripcion": "Un intenso juego de disparos en primera persona lleno de acción demoníaca.",
+            "anioLanzamiento": 2020,
+            "imagen": "../assets/doom.png",
+            "precio": 39.99,
+            "id": 1
+        },
+        {
+            "category": "Accion",
+            "titulo": "Assassin's Creed Valhalla",
+            "descripcion": "Únete a los vikingos en una aventura de acción y exploración en la época vikinga.",
+            "anioLanzamiento": 2020,
+            "imagen": "../assets/assasins.png",
+            "precio": 49.99,
+            "id": 2
+        },
+        {
+            "category": "Aventuras",
+            "titulo": "The Legend of Zelda: Breath of the Wild",
+            "descripcion": "Un juego de acción y aventuras en un mundo abierto ambientado en el reino de Hyrule.",
+            "anioLanzamiento": 2017,
+            "imagen": "../assets/zelda.png",
+            "precio": 49.99,
+            "id": 3
+        },
+        {
+            "category": "Aventuras",
+            "titulo": "Uncharted 4: A Thief's End",
+            "descripcion": "Únete a Nathan Drake en su última aventura en busca de tesoros y misterios.",
+            "anioLanzamiento": 2016,
+            "imagen": "../assets/uncharted.png",
+            "precio": 29.99,
+            "id": 4
+        },
+        {
+            "category": "Estrategias",
+            "titulo": "Sid Meier's Civilization VI",
+            "descripcion": "Construye y expande tu civilización en esta popular serie de juegos de estrategia.",
+            "anioLanzamiento": 2016,
+            "imagen": "../assets/civilization.png",
+            "precio": 44.99,
+            "id": 5
+        },
+        {
+            "category": "Estrategias",
+            "titulo": "Total War: Three Kingdoms",
+            "descripcion": "Sumérgete en el periodo de los Tres Reinos de China en este juego de estrategia.",
+            "anioLanzamiento": 2019,
+            "imagen": "../assets/totalwar.png",
+            "precio": 39.99,
+            "id": 6
+        },
+        {
+            "category": "Indie",
+            "titulo": "Hollow Knight",
+            "descripcion": "Un juego de plataformas en 2D con elementos de metroidvania y un arte encantador.",
+            "anioLanzamiento": 2017,
+            "imagen": "../assets/Hollow.png",
+            "precio": 14.99,
+            "id": 7
+        },
+        {
+            "category": "Indie",
+            "titulo": "Cuphead",
+            "descripcion": "Un desafiante juego de plataformas con un estilo visual inspirado en los dibujos animados de los años 30.",
+            "anioLanzamiento": 2017,
+            "imagen": "../assets/cuphead.png",
+            "precio": 19.99,
+            "id": 8
+        },
+        {
+            "category": "Shooters",
+            "titulo": "Call of Duty: Modern Warfare",
+            "descripcion": "Un shooter en primera persona que reinicia la saga Modern Warfare con gráficos y mecánicas mejorados.",
+            "anioLanzamiento": 2019,
+            "imagen": "../assets/cod.jpg",
+            "precio": 59.99,
+            "id": 9
+        },
+        {
+            "category": "Shooters",
+            "titulo": "Overwatch",
+            "descripcion": "Un shooter multijugador en equipos con una variedad de héroes únicos y estilos de juego.",
+            "anioLanzamiento": 2016,
+            "imagen": "../assets/overwatch.jpg",
+            "precio": 29.99,
+            "id": 10
+        },
+        {
+            "category": "Plataforma",
+            "titulo": "Super Mario Odyssey",
+            "descripcion": "Únete a Mario en su viaje por varios reinos en busca de su amada Peach.",
+            "anioLanzamiento": 2017,
+            "imagen": "../assets/mario.png",
+            "precio": 49.99,
+            "id": 11
+        },
+        {
+            "category": "Plataforma",
+            "titulo": "Celeste",
+            "descripcion": "Un juego de plataformas desafiante con una historia emotiva y un estilo pixel art.",
+            "anioLanzamiento": 2018,
+            "imagen": "../assets/celeste.jpg",
+            "precio": 19.99,
+            "id": 12
+        },
+        {
+            "category": "Simuladores",
+            "titulo": "The Sims 4",
+            "descripcion": "Crea y controla personajes en un mundo virtual donde puedes construir casas, establecer relaciones y más.",
+            "anioLanzamiento": 2014,
+            "imagen": "../assets/sims.png",
+            "precio": 39.99,
+            "id": 13
+        },
+        {
+            "category": "Simuladores",
+            "titulo": "Euro Truck Simulator 2",
+            "descripcion": "Simulador de conducción de camiones por carreteras europeas, con una gran atención al detalle.",
+            "anioLanzamiento": 2012,
+            "imagen": "../assets/truck.png",
+            "precio": 24.99,
+            "id": 14
+        }
+    ]
