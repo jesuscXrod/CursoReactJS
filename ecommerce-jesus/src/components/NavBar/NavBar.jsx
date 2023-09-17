@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget';
 
-const NavBar = () => {
-  const categorias = ['Accion', 'Aventuras', 'Estrategias', 'Indie', 'Shooters', 'Plataforma', 'Simuladores'];
+const categorias = ['Accion', 'Aventuras', 'Estrategias', 'Indie', 'Shooters', 'Plataforma', 'Simuladores'];
 
+const NavBar = () => {
   return (
     <nav>
       <div className="nav-wrapper">

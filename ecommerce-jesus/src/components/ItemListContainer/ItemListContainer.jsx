@@ -1,51 +1,45 @@
-import './ItemListContainer.css';
-import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { db } from '../../firebase/client';
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import Item from '../Item/Item';
 
 const ItemListContainer = () => {
   const [videojuegos, setVideojuegos] = useState([]);
   const { category } = useParams();
+  const productsRef = collection(db, "products");
+
+  const getProductsByCategory = async () => {
+    try {
+      const q = query(productsRef, where("categoryId", "==", category));
+      const data = await getDocs(q);
+      const dataFiltrada = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+      setVideojuegos(dataFiltrada);
+    } catch (error) {
+      console.error('Error al obtener los productos por categoría', error);
+    }
+  };
+
+  const getProducts = async () => {
+    try {
+      const data = await getDocs(productsRef);
+      const dataFiltrada = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+      setVideojuegos(dataFiltrada);
+    } catch (error) {
+      console.error('Error al obtener los productos', error);
+    }
+  };
 
   useEffect(() => {
-    const getGames = async () => {
-      try {
-        const response = await fetch('/data/productos.json');
-        const juegos = await response.json();
-
-        const filteredGames = juegos.filter(product => product.category === category);
-
-        if (filteredGames.length > 0) {
-          setVideojuegos(filteredGames);
-        } else {
-          setVideojuegos(juegos);
-        }
-      } catch (error) {
-        console.error('Error al cargar los juegos', error);
-      }
-    }
-
-    getGames();
+    category ? getProductsByCategory() : getProducts();
   }, [category]);
 
   return (
     <div>
       <h1>Catalogo de videojuegos</h1>
       <div className="row">
-        {videojuegos.map(juego => (
-          <div key={juego.id} className="col s12 m3">
-            <div className="card">
-              <div className="card-image">
-                <img className="image" src={juego.imagen} alt={juego.titulo} />
-                <span className="card-title">{juego.titulo}</span>
-                <Link to={`/item/${juego.id}`} className="btn-floating halfway-fab waves-effect waves-light red">
-                  <i className="material-icons">add</i>
-                </Link>
-              </div>
-              <div className="card-content">
-                <p>Precio: ${juego.precio}</p>
-              </div>
-            </div>
-          </div>
+        {videojuegos.map((juego) => (
+          <Item key={juego.id} juego={juego} />
         ))}
       </div>
     </div>
