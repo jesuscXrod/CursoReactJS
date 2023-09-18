@@ -8,10 +8,8 @@ const CartItem = ({ item }) => {
   const handleQuantityChange = (newQuantity) => {
     // Evitar que la cantidad sea menor que 1
     if (newQuantity < 1) {
-      // Eliminar el producto del carrito
       removeItem(item.id);
     } else {
-      // Actualizar la cantidad del producto
       updateItemQuantity(item.id, newQuantity);
     }
   };

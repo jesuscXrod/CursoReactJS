@@ -6,7 +6,6 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    // Lógica para obtener el carrito desde el almacenamiento local, si existe
     const savedCart = localStorage.getItem('cart');
     if (savedCart) {
       setCart(JSON.parse(savedCart));
@@ -23,7 +22,6 @@ export const CartProvider = ({ children }) => {
     const existingItem = cart.find((cartItem) => cartItem.id === item.id);
 
     if (existingItem) {
-      // Si existe, actualiza la cantidad
       const updatedCart = cart.map((cartItem) =>
         cartItem.id === item.id
           ? { ...cartItem, quantity: cartItem.quantity + quantity }
@@ -31,19 +29,16 @@ export const CartProvider = ({ children }) => {
       );
       setCart(updatedCart);
     } else {
-      // Si no existe, agrega el producto al carrito
       setCart([...cart, { ...item, quantity }]);
     }
   };
 
   const removeItem = (itemId) => {
-    // Remover un producto del carrito
     const updatedCart = cart.filter((cartItem) => cartItem.id !== itemId);
     setCart(updatedCart);
   };
 
   const updateItemQuantity = (itemId, newQuantity) => {
-    // Actualizar la cantidad de un producto en el carrito
     const updatedCart = cart.map((cartItem) =>
       cartItem.id === itemId ? { ...cartItem, quantity: newQuantity } : cartItem
     );
@@ -51,7 +46,6 @@ export const CartProvider = ({ children }) => {
   };
 
   const clearCart = () => {
-    // Limpiar todo el carrito
     setCart([]);
   };
 

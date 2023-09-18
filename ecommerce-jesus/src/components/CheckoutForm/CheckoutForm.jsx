@@ -15,8 +15,6 @@ const CheckoutForm = ({ onConfirm }) => {
       setFormError("Por favor, complete todos los campos.");
       return;
     }
-
-    // Si todos los campos están llenos, resetear el error y llamar a onConfirm
     setFormError(null);
 
     const userData = {
