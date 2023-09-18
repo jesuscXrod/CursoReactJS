@@ -17,21 +17,20 @@ const restar = () => {
     }
 
 return(
-    <div>
-        <button onClick={sumar}> + </button>
-        <h2>Cantidad: {quantity}</h2>
-        <button onClick={restar}> - </button>
-    
+    <div className='container-counter'>
+        <h2 className='center-align'>Cantidad: {quantity}</h2>
         <div>
-            <button onClick={() => onAdd(quantity)} disable={!stock}>Agregar a carrito</button>
+            <button className='waves-effect waves-light btn-small' onClick={restar}> - </button>
+            <button className='waves-effect waves-light btn-small' onClick={sumar}> + </button>     
+            <div>
+                <button className='waves-effect waves-light btn-small' onClick={() => onAdd(quantity)} disable={!stock}>Agregar a carrito</button>
+            </div>
+            <div>
+                <button className='waves-effect waves-light btn-small' onClick={() => setQuantity(0)}>Reset</button>
+            </div>
         </div>
-
-        <div>
-            <button onClick={() => setQuantity(0)}>Reset</button>
-        </div>
-    
     </div>
-) 
+    ) 
 }
 
 export default ItemCount

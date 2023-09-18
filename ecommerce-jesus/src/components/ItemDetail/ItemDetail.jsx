@@ -11,12 +11,13 @@ const ItemDetail = ({ detail }) => {
   const handleOnAdd = (quantity) => {
     setQuantityAdded(quantity);
 
-    const { id, title, price } = detail; // Obtener id, title y price desde detail
+    const { id, title, price, image } = detail;
 
     const item = {
       id,
       title,
       price,
+      image
     };
 
     addItem(item, quantity);
@@ -40,9 +41,9 @@ const ItemDetail = ({ detail }) => {
               <div>
                 {
                   quantityAdded > 0 ? (
-                    <Link to='/cart'>Chequear el carrito</Link>
+                    <Link className='waves-effect waves-light btn-large' to='/cart'>Chequear el carrito</Link>
                   ) : (
-                    <ItemCount initial={1} stock={10} onAdd={handleOnAdd} />
+                    <ItemCount initial={1} onAdd={handleOnAdd} />
                   )
                 }
               </div>

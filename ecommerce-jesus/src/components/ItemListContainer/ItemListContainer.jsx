@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { db } from '../../firebase/client';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import Item from '../Item/Item';
+import './ItemListContainer.css'
 
 const ItemListContainer = () => {
   const [videojuegos, setVideojuegos] = useState([]);

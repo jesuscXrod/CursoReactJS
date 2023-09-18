@@ -3,6 +3,7 @@ import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import CartItem from "../CartItem/CartItem";
 
+
 const Cart = () => {
   const { cart, totalQuantity } = useContext(CartContext);
 
@@ -14,7 +15,7 @@ const Cart = () => {
   const emptyCartMessage = totalQuantity === 0 ? (
     <div>
       <h1>No hay productos en el carrito de compras</h1>
-      <Link to="/">Productos</Link>
+      <Link className="waves-effect waves-light btn-large" to="/">Productos</Link>
     </div>
   ) : null;
 
@@ -22,12 +23,12 @@ const Cart = () => {
     <div>
       {emptyCartMessage}
       {cart.length > 0 && (
-        <div>
+        <div className="cart-container">
           {cart.map((item) => (
             <CartItem key={item.id} item={item} />
           ))}
           <h3>Total: ${formattedTotal}</h3>
-          <Link to="/order">Checkout</Link>
+          <Link className="waves-effect waves-light btn-large" to="/order">Checkout</Link>
         </div>
       )}
     </div>

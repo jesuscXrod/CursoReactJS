@@ -1,0 +1,31 @@
+.cart-container{
+    width: 80%;
+    margin: 2.5% auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.cart-item-image{
+    width: 200px;
+}
+.cart-item-image img{
+    width: 100%;
+    object-fit: contain;
+    height: 200px;
+}
+.cart-item{
+    display: flex;
+    width: 80%;
+}
+.cart-item-details{
+    margin: 0 10%;
+}
+.cart-item-actions span{
+    width: 7.5%;
+    display: inline-block;
+    text-align: center;
+}
+.left-margin{
+    margin-left: 5%;
+}
