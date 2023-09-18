@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { db } from '../../firebase/client';
 import { doc, getDoc } from 'firebase/firestore';
+import Loader from '../Loader/Loader';
 
 const ItemDetailContainer = () => {
   const [detail, setDetail] = useState({});
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
   useEffect(() => {
@@ -17,6 +19,7 @@ const ItemDetailContainer = () => {
         if (gameDocSnap.exists()) {
           const gameData = gameDocSnap.data();
           setDetail(gameData);
+          setLoading(false);
         } else {
           console.log("No se encontró el juego con el ID proporcionado.");
         }
@@ -28,7 +31,11 @@ const ItemDetailContainer = () => {
     getGame();
   }, [id]);
 
-  return <ItemDetail detail={detail} />;
+  return (
+    <div>
+      {loading ? ( <Loader /> ) : ( <ItemDetail detail={detail} /> )}
+    </div>
+  );
 };
 
 export default ItemDetailContainer;
